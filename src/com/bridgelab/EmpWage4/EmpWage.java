@@ -2,14 +2,20 @@ package com.bridgelab.EmpWage4;
 
 public class EmpWage {
 
-        public static final int isPartTime = 2;
-        public static final int isFullTime = 1;
-        public static final int empRatePerHour = 20;
 
-        public static void main(String[] args) {
+    public static final int isPartTime =1;
+    public static final int isFullTime = 2;
+    public static final int empRatePerHour = 20;
+    public static final int noOfWorkingDays = 2;
 
-            int empHrs = 0;
-            int totalWage = 0;
+    public static void main(String[] args) {
+
+        int empHrs = 0;
+        int totalempwage = 0;
+        int eWage = 0;
+        int days = 20;
+        
+        for (int day = 0; day < noOfWorkingDays; days++) {
 
             double empcheck= Math.floor(Math.random() *10) % 3;
 
@@ -27,9 +33,11 @@ public class EmpWage {
                     empHrs=0;
 
             }
+            eWage = empHrs * empRatePerHour;
+            totalempwage += eWage;
 
-            totalWage = empHrs * empRatePerHour;
-
-            System.out.println("Emp WAge: " + totalWage);
+            System.out.println("Emp WAge: " + eWage);
         }
+        System.out.println("Total Emp WAge: " + totalempwage);
     }
+}
